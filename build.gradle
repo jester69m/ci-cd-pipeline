@@ -30,10 +30,6 @@ pmd {
 
 tasks.withType(Pmd) {
     reports {
-        xml {
-            enabled = true
-            destination file("${project.buildDir}/reports/pmd/pmd.xml")
-        }
         html {
             enabled = true
             destination file("${project.buildDir}/reports/pmd/pmd.html")
