@@ -22,7 +22,7 @@ jobs:
 
       - name: Code Analysis
         run: |
-          gradle pmd
+          gradle pmdMain pmdTest
       #          gradle clean compile
 
       - name: Unit Tests
