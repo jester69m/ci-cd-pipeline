@@ -14,22 +14,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-#      - name: Set up Java
-#        uses: actions/setup-java@v2
-#        with:
-#          java-version: '17'
-#          distribution: 'adopt'
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: 17
+          distribution: 'adopt'
 
       - name: Code Analysis
         run: | 
-          gradle clean compile
-          gradle pmd
+          ./gradlew clean compile
+          ./gradlew pmdMain
 
       - name: Unit Tests
-        run: gradle test
+        run: ./gradlew test
 
       - name: Build JAR
-        run: gradle build
+        run: ./gradlew build
 
       - name: Deployment or Artifacts
         run: |
