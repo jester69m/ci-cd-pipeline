@@ -1,4 +1,4 @@
-name: pipeline
+name: ci-cd-pipeline
 
 on:
   push:
@@ -11,14 +11,14 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Java
-        uses: actions/setup-java@v2
-        with:
-          java-version: '17'
-          distribution: 'adopt'
+#      - name: Checkout code
+#        uses: actions/checkout@v2
+#
+#      - name: Set up Java
+#        uses: actions/setup-java@v2
+#        with:
+#          java-version: '17'
+#          distribution: 'adopt'
 
       - name: Code Analysis
         run: | 
