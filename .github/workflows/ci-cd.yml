@@ -21,9 +21,7 @@ jobs:
           distribution: 'adopt'
 
       - name: Code Analysis
-        run: |
-          gradle pmdMain pmdTest
-      #          gradle clean compile
+        run: gradle pmdMain pmdTest
 
       - name: Unit Tests
         run: gradle test
@@ -31,25 +29,10 @@ jobs:
       - name: Build JAR
         run: gradle build
 
-      - name: Deployment or Artifacts
-        run: |
-          echo "Deploying to server..."
-          # Deploy to server command
-          
-          echo "Publishing JAR to repository..."
-          # Publish JAR to repository command
-          
-          echo "Uploading JAR artifact..."
-          mkdir -p ${{ github.workspace }}/artifacts
-          cp build/libs/*.jar ${{ github.workspace }}/artifacts/
-          ls ${{ github.workspace }}/artifacts/
-          
-          echo "Publishing JAR artifact..."
-          name: JAR Artifact
-          uses: actions/upload-artifact@v2
-          with:
-            name: my-jar
-            path: ${{ github.workspace }}/artifacts/*.jar
-
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact
+          path: ${{ github.workspace }}/artifacts/*.jar
 
 
