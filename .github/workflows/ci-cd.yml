@@ -22,14 +22,14 @@ jobs:
 
       - name: Code Analysis
         run: | 
-          ./gradlew clean compile
-          ./gradlew pmdMain
+          gradle clean compile
+          gradle pmd
 
       - name: Unit Tests
-        run: ./gradlew test
+        run: gradle test
 
       - name: Build JAR
-        run: ./gradlew build
+        run: gradle build
 
       - name: Deployment or Artifacts
         run: |
