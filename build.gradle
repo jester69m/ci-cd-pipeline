@@ -40,3 +40,10 @@ tasks.withType(Pmd) {
         }
     }
 }
+tasks.named('compileJava') {
+    dependsOn('clean')
+}
+
+tasks.named('compileTestJava') {
+    dependsOn('compileJava')
+}
