@@ -21,9 +21,9 @@ jobs:
           distribution: 'adopt'
 
       - name: Code Analysis
-        run: | 
-#          gradle clean compile
+        run: |
           gradle pmd
+      #          gradle clean compile
 
       - name: Unit Tests
         run: gradle test
