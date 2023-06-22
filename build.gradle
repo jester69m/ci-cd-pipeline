@@ -27,3 +27,16 @@ pmd {
     ignoreFailures = false
     consoleOutput = true
 }
+
+tasks.withType(Pmd) {
+    reports {
+        xml {
+            required = false
+            destination file("${project.buildDir}/reports/pmd/pmd.xml")
+        }
+        html {
+            required = true
+            destination file("${project.buildDir}/reports/pmd/pmd.html")
+        }
+    }
+}
