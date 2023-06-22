@@ -33,6 +33,6 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: my-artifact
-          path: ${{ github.workspace }}/artifacts/*.jar
+          path: build/libs/*.jar
 
 
