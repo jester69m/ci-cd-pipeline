@@ -27,12 +27,3 @@ pmd {
     ignoreFailures = false
     consoleOutput = true
 }
-
-tasks.withType(Pmd) {
-    reports {
-        html {
-            enabled = true
-            destination file("${project.buildDir}/reports/pmd/pmd.html")
-        }
-    }
-}
