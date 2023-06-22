@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'pmd'
 }
 
 group 'com.pashchuk'
@@ -10,10 +11,26 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation 'net.sourceforge.pmd:pmd:6.55.0'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
 }
 
 test {
     useJUnitPlatform()
+}
+
+pmd {
+    ruleSets = []
+    ruleSetFiles = files("pmd-ruleset.xml")
+    ignoreFailures = false
+    consoleOutput = true
+}
+
+tasks.withType(Pmd) {
+    reports {
+        xml.enabled = false
+        html.enabled = true
+    }
 }

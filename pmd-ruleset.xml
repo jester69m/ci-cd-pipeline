@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         name="Custom Rules">
+
+    <description>
+        Custom rules
+    </description>
+
+    <rule ref="category/java/bestpractices.xml/UnusedPrivateField"/>
+
+    <rule ref="category/java/bestpractices.xml/UnusedPrivateMethod"/>
+
+    <rule ref="category/java/bestpractices.xml/UnusedLocalVariable"/>
+
+    <rule ref="category/java/bestpractices.xml/UnusedFormalParameter"/>
+
+</ruleset>
