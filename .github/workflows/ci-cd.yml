@@ -34,5 +34,6 @@ jobs:
         with:
           name: my-artifact
           path: build/libs/*.jar
+        run: gradle publish
 
 
